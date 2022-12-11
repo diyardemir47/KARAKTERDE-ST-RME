@@ -1,0 +1,27 @@
+using System;
+using System.Collections;
+
+class program
+{
+    static void Main(string[] args)
+    {
+        System.Console.WriteLine("Bir cümle giriniz:");
+        string cumle = Console.ReadLine(); //Merhaba Dünya
+        Metod(cumle);
+    }
+
+    static void Metod(string cumle)
+    {
+        char[] cımbız = { ' ' };
+        string[] cımbızlanmıs = cumle.Split(cımbız); //Merhaba,Dünya
+        for (int sayar = 0; sayar < cımbızlanmıs.Length; sayar++)
+        {
+            char[] harfler = cımbızlanmıs[sayar].ToCharArray(); //M,e,r,h,a,b,a
+            char yedek = harfler[0];
+            harfler[0] = harfler[harfler.Length - 1];
+            harfler[harfler.Length - 1] = yedek;
+            string yenikelime = string.Concat(harfler);
+            System.Console.Write(yenikelime + " ");
+        }
+    }
+}
